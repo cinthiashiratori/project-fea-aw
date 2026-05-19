@@ -1,0 +1,30 @@
+name: 'project_fea_aw'
+version: '1.0.0'
+config-version: 2
+
+# Define onde o dbt deve procurar cada tipo de arquivo
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+# Configurações de Escrita dos Modelos
+models:
+  project_fea_aw:
+    staging:
+      +materialized: table
+    intermediate:
+      +materialized: table
+    marts:
+      +materialized: table
+
+# Configurações de Escrita das Seeds (tabelas estáticas se houver)
+# seeds:
+#   project_fea_aw:
+#     +enabled: true
