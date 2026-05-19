@@ -10,8 +10,8 @@ with
             , cast(salesorderid as int) as fk_sales_order
             , cast(productid as int) as fk_product
             , cast(orderqty as int) as qtd_item_pedido
-            , cast(unitprice as numeric(18,2)) as preco_unitario_item
-            , cast(unitpricediscount as numeric(18,2)) as desconto_unitario_item
+            , unitprice as preco_unitario_item
+            , unitpricediscount as desconto_unitario_item
             , cast(modifieddate as timestamp) as dt_modificacao_item
         from fonte_salesorderdetail
     )
