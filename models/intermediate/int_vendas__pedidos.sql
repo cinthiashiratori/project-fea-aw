@@ -70,12 +70,11 @@ with
             , qtd_item_pedido
             , preco_unitario_item
             , desconto_unitario_item
-            , cast(vl_faturamento_bruto as numeric(18,2)) as vl_faturamento_bruto
-            , cast(vl_faturamento_liquido as numeric(18,2)) as vl_faturamento_liquido
+            , vl_faturamento_bruto
+            , vl_faturamento_liquido
             
-            -- Valores proporcionais de frete e imposto por item (Garante a acurácia dos relatórios)
-            , cast((total_pedido_frete * percentual_participacao_item) as numeric(18,2)) as vl_frete_proporcional
-            , cast((total_pedido_imposto * percentual_participacao_item) as numeric(18,2)) as vl_imposto_proporcional
+            , (total_pedido_frete * percentual_participacao_item) as vl_frete_proporcional
+            , (total_pedido_imposto * percentual_participacao_item) as vl_imposto_proporcional
 
         from rateio_valores
     )

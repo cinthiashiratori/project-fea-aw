@@ -16,10 +16,10 @@ with
             , cast(orderdate as timestamp) as dt_pedido
             , cast(duedate as timestamp) as dt_vencimento
             , cast(shipdate as timestamp) as dt_envio
-            , cast(subtotal as numeric(18,2)) as vl_subtotal
-            , cast(taxamt as numeric(18,2)) as vl_imposto
-            , cast(freight as numeric(18,2)) as vl_freight
-            , cast(totaldue as numeric(18,2)) as vl_total_devido
+            , subtotal as vl_subtotal
+            , taxamt as vl_imposto
+            , freight as vl_freight
+            , totaldue as vl_total_devido
             , cast(modifieddate as timestamp) as dt_modificacao
         from fonte_salesorderheader
     )
