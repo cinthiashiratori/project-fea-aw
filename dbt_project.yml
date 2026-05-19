@@ -1,3 +1,4 @@
+
 name: 'project_fea_aw'
 version: '1.0.0'
 config-version: 2
@@ -28,3 +29,4 @@ models:
 # seeds:
 #   project_fea_aw:
 #     +enabled: true
+
